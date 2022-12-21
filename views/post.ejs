@@ -1,0 +1,15 @@
+<%- include("partials/header") -%>
+
+<h1><%= newPostTitle %></h1>
+<h6><%= newPostDate %> <%= newPostTime %></h6>
+<p><%= newPostContent %></p>
+<br>
+<br>
+<form class="delete" action="/post" method="post">
+  <button class="btn btn-outline-danger" type="submit" name="delete" value="<%= newPostId %>"> Delete Post </button>
+</form>
+
+
+
+
+<%- include("partials/footer") -%>

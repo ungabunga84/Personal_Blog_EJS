@@ -1,0 +1,34 @@
+<%- include("partials/header") -%>
+
+
+<h1>Home</h1>
+<p> <%= homeStartingText %> </p>
+
+
+
+<% newPosts.forEach(function(newPost){ %>
+<% if (newPost.postContent.length < 120) {%>
+<h1> <a class="titleLink" href="/posts/<%= newPost.postTitle %>"><%= newPost.postTitle %></a> </h1>
+<h6><%= newPost.postDate %> <%= newPost.postTime %></h6>
+<p> <%= newPost.postContent %> </p>
+<% } else { %>
+<h1> <a class="titleLink" href="/posts/<%= newPost.postTitle %>"><%= newPost.postTitle %></a> </h1>
+<h6><%= newPost.postDate %> <%= newPost.postTime %></h6>
+<p> <%= newPost.postContent.slice(0,120) %>... <a class="readMore" href="/posts/<%= newPost.postTitle %>">read more</a> </p>
+
+<% } %>
+
+
+
+
+<% }) %>
+
+
+
+
+
+
+
+
+
+<%- include("partials/footer") -%>
